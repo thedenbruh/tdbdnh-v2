@@ -1,0 +1,18 @@
+Options +FollowSymLinks
+Options -Indexes
+RewriteEngine on
+
+#RewriteRule user/(.*)/ user.php?id=$1
+#RewriteRule forum/thread/(.*) /forum/thread.php?id=$1
+
+ErrorDocument 404 /errors/404.php
+ErrorDocument 403 /errors/403.php
+ErrorDocument 502 /errors/502.php
+ErrorDocument 500 /errors/500.php
+
+# Hide .php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+?)/?$ $1.php [NC,L]
+RewriteCond %{THE_REQUEST} "^[^ ]* .*?\.php[? ].*$"
+RewriteRule .* - [L,R=404]
