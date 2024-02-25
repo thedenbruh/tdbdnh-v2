@@ -1,7 +1,8 @@
 <?php
 include('config.php');
 $membershipPower = -1;
-include('hell.php');
+$zlrikrlke5ddfb9f1b5292a3f26a1f4c928dec95 == true;
+include('membershipAPI.php');
 if (isset($_SESSION['id'])) {
   
   $currentUserID = $_SESSION['id'];
